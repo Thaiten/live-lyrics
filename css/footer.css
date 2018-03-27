@@ -1,0 +1,154 @@
+.link-wrapper a:after, a.creator:after {
+  content: '';
+}
+
+.footer {
+  text-align: center;
+  padding: 75px;
+}
+
+.footer a {
+  color: #eaeaea;
+  display: inline-block;
+  margin: 8px 0;
+}
+
+.link-wrapper a, a.creator {
+  color: #fff;
+  text-decoration: none;
+}
+
+.link-wrapper a:after {
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  bottom: 0;
+  left: 0;
+  background-color: #333;
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform .3s;
+}
+
+.link-wrapper, .link-wrapper a, a.creator {
+  display: inline-block;
+  position: relative;
+}
+
+.link-wrapper a:hover:after {
+  transform-origin: bottom left;
+  transform: scaleX(1);
+}
+
+.link-wrapper a {
+  padding: 10px 0;
+}
+
+.link-wrapper {
+  padding: 0 5px;
+}
+
+a.creator {
+  cursor: pointer;
+  transform: translate3d(0, -50%, 0);
+  padding: .7em calc(.7em * 1.2);
+  border: 3px solid transparent;
+  letter-spacing: .07em;
+  margin-top: 1em;
+}
+
+.line, a.creator:after {
+  position: absolute;
+  background: #1f1f28;
+}
+
+a.creator .text {
+  transform: translate3d(0, .7em, 0);
+  display: block;
+  transition: transform .4s cubic-bezier(.2, 0, 0, 1) .4s;
+}
+
+a.creator:after {
+  bottom: -3px;
+  left: calc(.7em * 1.2);
+  right: calc(.7em * 1.2);
+  height: 3px;
+  z-index: -1;
+  transition: transform .8s cubic-bezier(1, 0, .37, 1) .2s, right .2s cubic-bezier(.04, .48, 0, 1) .6s, left .4s cubic-bezier(.04, .48, 0, 1) .6s;
+  transform-origin: left;
+}
+
+.creator .line.-left, .line.-right {
+  width: 3px;
+  bottom: -3px;
+  top: -3px;
+  transform: scale3d(1, 0, 1);
+}
+
+.creator .line.-bottom, .line.-top {
+  height: 3px;
+  left: -3px;
+  right: -3px;
+  transform: scale3d(0, 1, 1);
+}
+
+.line.-right {
+  right: -3px;
+  transition: transform .1s cubic-bezier(1, 0, .65, 1.01) .23s;
+  transform-origin: top;
+}
+
+.line.-top {
+  top: -3px;
+  transition: transform 80ms linear .43s;
+  transform-origin: left;
+}
+
+.line.-left {
+  left: -3px;
+  transition: transform 80ms linear .51s;
+  transform-origin: bottom;
+}
+
+.line.-bottom {
+  bottom: -3px;
+  transition: transform .3s cubic-bezier(1, 0, .65, 1.01);
+  transform-origin: right;
+}
+
+a.creator:active .text, a.creator:hover .text {
+  transform: translate3d(0, 0, 0);
+  transition: transform .6s cubic-bezier(.2, 0, 0, 1) .4s
+}
+
+a.creator:active:after, a.creator:hover:after {
+  transform: scale3d(0, 1, 1);
+  right: -3px;
+  left: -3px;
+  transform-origin: right;
+  transition: transform .2s cubic-bezier(1, 0, .65, 1.01) .17s, right .2s cubic-bezier(1, 0, .65, 1.01), left 0s .3s;
+}
+
+a.creator:active .line, a.creator:hover .line {
+  transform: scale3d(1, 1, 1);
+}
+
+a.creator:active .line.-right, a.creator:hover .line.-right {
+  transition: transform .1s cubic-bezier(1, 0, .65, 1.01) .2s;
+  transform-origin: bottom;
+}
+
+a.creator:active .line.-top, a.creator:hover .line.-top {
+  transition: transform 80ms linear .4s;
+  transform-origin: right;
+}
+
+a.creator:active .line.-left, a.creator:hover .line.-left {
+  transition: transform 80ms linear .48s;
+  transform-origin: top;
+}
+
+a.creator:active .line.-bottom, a.creator:hover .line.-bottom {
+  transition: transform .5s cubic-bezier(0, .53, .29, 1) .56s;
+  transform-origin: left;
+}
