@@ -27,7 +27,7 @@ body{
 .header ul a li{
   font-family: 'Chivo', sans-serif;
   color: #1f1f28;
-  font-weight: 600;
+  font-weight: 500;
   font-size: 1.25em;
   transition: .3s ease;
 }
